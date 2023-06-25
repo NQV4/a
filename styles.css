@@ -59,14 +59,15 @@ font-family: "Arial", sans-serif;
     margin-bottom: 10px;
   }
 
-
   #total-production {
     font-size: 14px;
     margin-bottom: 20px;
   }
 
   #click-button {
-    display: block;
+    display: flex; /* 要素をフレックスコンテナとして表示 */
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
     width: 150px;
     height: 150px;
     background-color: #ff5722;
@@ -80,6 +81,38 @@ font-family: "Arial", sans-serif;
     cursor: pointer;
     touch-action: manipulation;
   }
+  
+
+.scoreup{
+  border: none; /* 枠線を非表示にする */
+  background-color: #124b61;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+    /* ジェネレータ要素のホバー時の影を指定 */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+/* ジェネレータ要素のカーソルをポインターに指定 */
+cursor: pointer;
+}
+
+#scores{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+
+    /* ジェネレータ要素のホバー時の影を指定 */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+/* ジェネレータ要素のカーソルをポインターに指定 */
+cursor: pointer;
+}
 
   #generators {
     display: flex;
@@ -89,6 +122,11 @@ font-family: "Arial", sans-serif;
     list-style: none;
     padding: 0;
     margin-bottom: 30px;
+
+      /* ジェネレータ要素のホバー時の影を指定 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* ジェネレータ要素のカーソルをポインターに指定 */
+  cursor: pointer;
   }
 
   .generator {
@@ -99,6 +137,11 @@ font-family: "Arial", sans-serif;
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
+      /* ジェネレータ要素のホバー時の影を指定 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* ジェネレータ要素のカーソルをポインターに指定 */
+  cursor: pointer;
   }
 
   .generator:hover {
