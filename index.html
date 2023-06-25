@@ -12,7 +12,15 @@
   <div id="plus"></div>
   <div id="score">0</div>
   <div id="total-production">0 / 秒</div>
-  <button id="click-button" onclick="increaseScore()">クリック</button>
+  <div id="click-button" onclick="increaseScore()">クリック</div>
+  <ul id="scores">
+    <li class="scoreup" onclick="clickup()">
+      <span class="unknown">クリック強化</span><br>
+      <span id="clickcost">a</span><br>
+      <span id="clickpower">b</span><br>
+      <span id="clicklevel">c</span>
+    </li>
+    </ul>
   <ul id="generators">
     <li class="generator" id="generator-0" onclick="buyGenerator(0)">
       <span class="generator-name">農場</span><br>
