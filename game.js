@@ -22,12 +22,13 @@ let generators = [
 function clickup(){
   if (score > clickcost){
     score -= clickcost;
-    clicklevel += 1;
+    clicklevel += 1; 
     clickpower += (clicklevel * 2);
-    clickcost += (clicklevel * 10)
+    clickcost += ((clicklevel * clicklevel) * 50)
     document.getElementById("clickcost").innerText = "コスト: " + clickcost;
     document.getElementById("clickpower").innerText = "生産力: " + clickpower;
     document.getElementById("clicklevel").innerText = "レベル: " + clicklevel;
+    nsaveGame();
   }
 }
 
@@ -140,6 +141,9 @@ function saveGame() {
 if (ys == 1){
 // ゲームの状態を保存
 localStorage.setItem("score", score);
+localStorage.setItem("click", clicklevel);
+localStorage.setItem("click", clickcost);
+localStorage.setItem("click", clickpower);
 localStorage.setItem("totalProduction", totalProduction);
 localStorage.setItem("generators", JSON.stringify(generators));
 document.getElementById("ys").innerText = "セーブ完了"
@@ -154,16 +158,19 @@ document.getElementById("ys").innerText = ""}, 1000); // 1000ミリ秒 = 1秒
 }
 
 function nsaveGame() {
-if (ys == 1){
-// ゲームの状態を保存
-localStorage.setItem("score", score);
-localStorage.setItem("totalProduction", totalProduction);
-localStorage.setItem("generators", JSON.stringify(generators));
-document.getElementById("ys").innerText = ""
-setTimeout(function() {
-document.getElementById("ys").innerText = ""
-}, 1000); // 1000ミリ秒 = 1秒
-} else {
+  if (ys == 1){
+    // ゲームの状態を保存
+    localStorage.setItem("score", score);
+    localStorage.setItem("level", clicklevel);
+    localStorage.setItem("cost", clickcost);
+    localStorage.setItem("power", clickpower);
+    localStorage.setItem("totalProduction", totalProduction);
+    localStorage.setItem("generators", JSON.stringify(generators));
+    document.getElementById("ys").innerText = "セーブ完了"
+    setTimeout(function() {
+    document.getElementById("ys").innerText = ""
+    }, 1000); // 1000ミリ秒 = 1秒
+    }  else {
 document.getElementById("ys").innerText = "セーブ失敗時間をあけてください"
 setTimeout(function() {
 document.getElementById("ys").innerText = ""}, 1000); // 1000ミリ秒 = 1秒
@@ -174,7 +181,9 @@ function loadGame() {
 // ゲームの状態をロード
 score = parseInt(localStorage.getItem("score")) || 0;
 totalProduction = parseInt(localStorage.getItem("totalProduction")) || 0;
-timeLeft = parseInt(localStorage.getItem("timeLeft")) || 30;
+clicklevel = parseInt(localStorage.getItem("level")) || 1;
+clickcost = parseInt(localStorage.getItem("cost")) || 10;
+clickpower = parseInt(localStorage.getItem("power")) || 1;
 
 // ジェネレーターの購入情報をロード
 const generatorsData = localStorage.getItem("generators");
