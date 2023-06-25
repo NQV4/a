@@ -1,6 +1,9 @@
 let ys = 1;
 let dl = 0;
 let score = 0;
+let clicklevel = 1;
+let clickcost = 10;
+let clickpower = 1;
 let plusfree = 0;
 let totalProduction = 0;
 let generators = [
@@ -16,8 +19,20 @@ let generators = [
   { name: "油田", cost: 20000, rate: 2000, production: 0, level: 1 }
 ];
 
+function clickup(){
+  if (score > clickcost){
+    score -= clickcost;
+    clicklevel += 1;
+    clickpower += (clicklevel * 2);
+    clickcost += (clicklevel * 10)
+    document.getElementById("clickcost").innerText = "コスト: " + clickcost;
+    document.getElementById("clickpower").innerText = "生産力: " + clickpower;
+    document.getElementById("clicklevel").innerText = "レベル: " + clicklevel;
+  }
+}
+
 function increaseScore() {
-  score++;
+  score += clickpower;
   document.getElementById("score").innerText = Math.floor(score);
   document.getElementById("click-button").classList.add("animate");
   setTimeout(function() {
@@ -167,7 +182,10 @@ if (generatorsData) {
 generators = JSON.parse(generatorsData);
 }
 
-// UI を更新
+
+document.getElementById("clickcost").innerText = "コスト: " + clickcost;
+document.getElementById("clickpower").innerText = "生産力: " + clickpower;
+document.getElementById("clicklevel").innerText = "レベル: " + clicklevel;
 document.getElementById("score").innerText = score;
 document.getElementById("total-production").innerText = totalProduction + " / 秒";
 updateProductionUI();
