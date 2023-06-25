@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>クリックゲーム</title>
+</head>
+<body>
+  <h1>エンドレスモード</h1>
+  <div id="plus"></div>
+  <div id="score">0</div>
+  <div id="total-production">0 / 秒</div>
+  <button id="click-button" onclick="increaseScore()">クリック</button>
+  <ul id="generators">
+    <li class="generator" id="generator-0" onclick="buyGenerator(0)">
+      <span class="generator-name">農場</span><br>
+      <span class="generator-cost">コスト: 10</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-1" onclick="buyGenerator(1)">
+      <span class="generator-name">紙生産工場</span><br>
+      <span class="generator-cost">コスト: 50</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-2" onclick="buyGenerator(2)">
+      <span class="generator-name">金属加工工場</span><br>
+      <span class="generator-cost">コスト: 100</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-3" onclick="buyGenerator(3)">
+      <span class="generator-name">発電所</span><br>
+      <span class="generator-cost">コスト: 200</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-4" onclick="buyGenerator(4)">
+      <span class="generator-name">下水処理場</span><br>
+      <span class="generator-cost">コスト: 500</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-5" onclick="buyGenerator(5)">
+      <span class="generator-name">銀行</span><br>
+      <span class="generator-cost">コスト: 1000</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-6" onclick="buyGenerator(6)">
+      <span class="generator-name">地主</span><br>
+      <span class="generator-cost">コスト: 2000</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-7" onclick="buyGenerator(7)">
+      <span class="generator-name">飛行機工場</span><br>
+      <span class="generator-cost">コスト: 5000</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-8" onclick="buyGenerator(8)">
+      <span class="generator-name">造船所</span><br>
+      <span class="generator-cost">コスト: 10000</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+    <li class="generator" id="generator-9" onclick="buyGenerator(9)">
+      <span class="generator-name">油田</span><br>
+      <span class="generator-cost">コスト: 20000</span><br>
+      <span class="generator-production">生産量: 0 / 秒</span><br>
+      <span class="generator-level">レベル: 1</span>
+    </li>
+  </ul>
+  <div class = save>
+  <button onclick="saveGame()">セーブ</button>
+</div>
+  <div class = reset>
+  <button onclick="resetGame()">リセット</button>
+</div>
+  <div id="ys"></div>
+  <script src="game.js"></script>
+</body>
+</html>

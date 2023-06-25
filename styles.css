@@ -1,0 +1,122 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.save {
+font-family: "Arial", sans-serif;
+      display: flex;
+  justify-content: center;
+  margin-top: 20px;
+      margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px;
+  height: 40px;
+  }
+
+  .reset {
+    font-family: "Arial", sans-serif;
+      display: flex;
+  justify-content: center;
+  margin-top: 20px;
+      margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #af4c4c;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px;
+  height: 40px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  #score {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+
+  #total-production {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  #click-button {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  #generators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .generator {
+    background-color: #2979ff;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .generator:hover {
+    background-color: #1c54b2;
+  }
+
+  /* 新たに追加するスマートフォン用のスタイル */
+
+  @media only screen and (max-width: 480px) {
+    #click-button {
+      width: 100px;
+      height: 100px;
+      font-size: 16px;
+    }
+
+    .generator {
+      font-size: 14px;
+      padding: 8px 16px;
+      margin: 5px;
+    }
+  }
